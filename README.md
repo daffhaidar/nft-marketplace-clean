@@ -1,6 +1,6 @@
-# E-Commerce Application
+# NFT Marketplace
 
-This is a full-featured e-commerce application with chatbot and wallet functionality.
+This is a full-featured e-commerce application with chatbot and wallet functionality(demo).
 
 ## Features
 
@@ -9,7 +9,7 @@ This is a full-featured e-commerce application with chatbot and wallet functiona
 - User authentication
 - Checkout process
 - Customer support chatbot
-- Digital wallet for cryptocurrency transactions
+- Integrated wallet(Metamask) for cryptocurrency transactions
 
 ## Run Locally
 
@@ -60,17 +60,10 @@ Start the server
 ## Chatbot Functionality
 
 The application includes a live chat support feature allowing customers to:
-- Get instant responses from the support bot
-- Chat in real-time with support staff
+- Get instant responses from the support bot(demo)
+- Chat in real-time with support staff(demo)
 - Access help from any page through the floating chat widget
 
-## Wallet Functionality
-
-The digital wallet feature enables users to:
-- Create a cryptocurrency wallet
-- View their wallet balance
-- Make transactions to other wallet addresses
-- View transaction history
 
 ## Technologies Used
 
