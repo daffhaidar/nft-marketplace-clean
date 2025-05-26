@@ -81,5 +81,9 @@ The digital wallet feature enables users to:
 - Ethers.js for wallet functionality
 - Redux for state management
 
+<<<<<<< HEAD
 > Inspired by [ssahibsingh/React_E-Commerce](https://github.com/ssahibsingh/React_E-Commerce)
 
+=======
+ Inspired by [ssahibsingh/React_E-Commerce](https://github.com/ssahibsingh/React_E-Commerce)
+>>>>>>> 7061dddee904c98dfd79b810bae8380fd58c1166
