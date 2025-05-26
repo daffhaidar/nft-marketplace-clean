@@ -16,7 +16,7 @@ This is a full-featured e-commerce application with chatbot and wallet functiona
 Clone the project
 
 ```bash
-  git clone https://github.com/daffhaidar/danna-nft.git
+  git clone https://github.com/daffhaidar/nft-marketplace-clean.git
 ```
 
 Go to the project directory
