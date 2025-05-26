@@ -10,6 +10,7 @@ body {
   color: #4a3b31; /* Deep rich brown text */
   font-size: 16px;
   line-height: 1.7;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Navbar Styles - White to Tortoise Theme */
@@ -56,6 +57,7 @@ body {
   gap: 0.3rem; /* Reduced gap */
   flex-shrink: 1; /* Allow this container to shrink if navbar is too full */
   min-width: 0; /* Important for flex-shrink to work with inner content */
+  flex-wrap: wrap; /* Allow buttons to wrap on very small screens */
 }
 
 .navbar-custom .btn-custom-outline {
@@ -451,6 +453,8 @@ body {
   color: #5c4033; /* Medium-dark brown */
   line-height: 1.7;
   font-weight: 400;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-section .btn-hero-cta {
@@ -1013,29 +1017,51 @@ body {
 @media (max-width: 991.98px) { /* Bootstrap's lg breakpoint */
   .navbar-collapse .buttons {
     margin-top: 1rem; /* Add some space above the buttons block */
-    align-items: stretch; /* Make items stretch to fill width */
+    /* align-items: stretch; /* Not needed if buttons are d-block */
   }
 
   .navbar-collapse .buttons > .btn-custom-outline,
   .navbar-collapse .buttons > .btn-custom-primary,
   .navbar-collapse .buttons > .btn-custom-danger,
   .navbar-collapse .buttons > .wallet-address {
-    width: 100%; /* Make buttons/wallet address take full width */
-    margin-bottom: 0.5rem; /* Add some space between stacked items */
-    text-align: center; /* Center text within these full-width items */
+    width: 100%; /* Ensure full width */
+    margin-left: 0 !important; /* Override any specific margin from desktop */
+    margin-right: 0 !important; /* Override any specific margin from desktop */
+    /* mb-2 class from JSX handles bottom margin */
+
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    gap: 0.25rem;            
+
+    padding: 0.45rem 1rem !important; 
+    box-sizing: border-box !important; 
+    /* text-align: center; /* Covered by flex centering */
   }
 
-  .navbar-collapse .buttons > .wallet-address {
-    padding-top: 0.6rem;
-    padding-bottom: 0.6rem;
+  /* Override icon margins within mobile nav buttons to let gap handle spacing */
+  .navbar-collapse .buttons > .btn-custom-outline > i,
+  .navbar-collapse .buttons > .btn-custom-primary > i,
+  .navbar-collapse .buttons > .btn-custom-danger > i,
+  .navbar-collapse .buttons > .wallet-address > i {
+    margin-right: 0 !important;
   }
+
+  .navbar-collapse .buttons .cart-nav-button {
+    white-space: normal !important; /* Allow cart button text to wrap on mobile */
+  }
+
+  /* .navbar-collapse .buttons > .wallet-address { 
+    padding-top: 0.6rem; 
+    padding-bottom: 0.6rem; 
+  } */ /* Padding is now harmonized by the general rule above */
 
   .navbar-collapse .nav-item .nav-link {
-    padding-left: 0.5rem; /* Adjust padding for main nav links in collapsed menu */
-    text-align: left;
+    padding-left: 0.5rem; 
+    text-align: left; /* Align nav links to the left in collapsed menu */
   }
   .navbar-custom .navbar-nav.text-center { /* From Navbar.jsx ul element */
-    text-align: left !important; /* Override text-center for collapsed view */
+    text-align: left !important; /* Override text-center for collapsed view nav links */
   }
 }
 

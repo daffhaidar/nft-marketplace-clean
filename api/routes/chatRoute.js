@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { isAuthenticatedUser } = require('../middleware/auth');
+const { isAuthenticatedUser } = require('../middlewares/user_actions/auth');
 
 // Store messages temporarily (in production, use a database)
 let chatMessages = [];
