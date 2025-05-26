@@ -1,0 +1,1146 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Poppins", "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fdfbf8; /* Soft warm off-white */
+  color: #4a3b31; /* Deep rich brown text */
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Navbar Styles - White to Tortoise Theme */
+.navbar-custom {
+  background-color: #ffffff; /* Clean white navbar */
+  padding: 1rem 1.5rem;
+  font-family: "Poppins", sans-serif;
+  border-bottom: 1px solid #e5d8cf; /* Light warm brown border */
+  box-shadow: 0 2px 4px rgba(74, 59, 49, 0.05); /* Soft brown-tinted shadow */
+}
+
+.navbar-custom .navbar-brand {
+  color: #4a3b31; /* Deep brown brand text */
+  font-weight: 700;
+  font-size: 1.9rem;
+  transition: color 0.3s ease;
+  padding-right: 1rem; /* Add some padding to the right to create space if needed */
+}
+.navbar-custom .navbar-brand:hover {
+  color: #d97706; /* Warm Amber for hover */
+}
+
+.navbar-custom .nav-link {
+  color: #5c4033; /* Medium-dark brown for nav links */
+  margin: 0 0.3rem; /* Further reduced horizontal margin */
+  padding: 0.5rem 0.6rem; /* Further reduced padding */
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 0.95rem; /* Slightly reduced font size */
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link.active {
+  color: #d97706; /* Warm Amber for active/hover */
+  background-color: #fdfbf8; /* Light cream background for hover */
+}
+
+/* This is the container for Login/Register OR User/Logout AND Wallet AND Cart */
+.navbar-custom .buttons {
+  display: flex; /* Already there via d-flex */
+  align-items: center; /* Already there via d-flex */
+  justify-content: flex-end; /* Keep items to the right */
+  gap: 0.3rem; /* Reduced gap */
+  flex-shrink: 1; /* Allow this container to shrink if navbar is too full */
+  min-width: 0; /* Important for flex-shrink to work with inner content */
+}
+
+.navbar-custom .btn-custom-outline {
+  color: #d97706; /* Warm Amber */
+  border: 2px solid #d97706;
+  padding: 0.45rem 1rem; /* Slightly reduced padding */
+  border-radius: 25px;
+  font-weight: 600;
+  background-color: transparent;
+}
+
+.navbar-custom .btn-custom-outline:hover {
+  background-color: #d97706;
+  color: #ffffff;
+}
+
+.navbar-custom .btn-custom-primary {
+  background: linear-gradient(90deg, #d97706, #b85b00); /* Amber/Burnt Orange gradient */
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(217, 119, 6, 0.2);
+  animation: none; /* Removing gradientShift for now */
+}
+
+.navbar-custom .btn-custom-primary:hover {
+  background: linear-gradient(90deg, #b85b00, #934a05); /* Darker amber gradient */
+  box-shadow: 0 6px 20px rgba(217, 119, 6, 0.3);
+}
+
+.navbar-custom .btn-custom-primary:disabled {
+  background: #a0522d; /* Sienna for disabled */
+  box-shadow: none;
+  cursor: not-allowed;
+  color: #fdfbf8;
+}
+
+.navbar-custom .wallet-address {
+  color: #4a3b31; /* Deep brown text */
+  background-color: #fdfbf8; /* Light cream background */
+  padding: 0.5rem 0.8rem; /* Reduced padding a bit more */
+  border-radius: 25px;
+  font-weight: 500;
+  border: 1px solid #d97706; /* Warm Amber border */
+  white-space: nowrap; /* Prevent address from breaking mid-string */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Add ellipsis for overflow */
+  max-width: 145px; /* Increased max-width slightly */
+  min-width: 100px; /* Adjusted min-width - this will be the effective min-width due to specificity */
+  flex-shrink: 1; /* Allow this element to shrink */
+}
+
+.navbar-custom .btn-custom-danger {
+  color: #c82333; /* Standard Bootstrap danger red, can be adjusted */
+  border: 2px solid #c82333;
+  padding: 0.5rem 1.2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  background-color: transparent;
+}
+
+.navbar-custom .btn-custom-danger:hover {
+  background-color: #c82333;
+  color: #ffffff;
+}
+
+.navbar-custom .cart-info {
+  color: #d97706; /* Warm Amber */
+  font-weight: 600;
+}
+.navbar-custom .cart-info .fa-shopping-cart {
+  font-size: 1.1rem;
+}
+
+/* Targeting all direct children of .buttons that are buttons or the wallet address */
+.navbar-custom .buttons > .btn-custom-outline,
+.navbar-custom .buttons > .btn-custom-primary,
+.navbar-custom .buttons > .btn-custom-danger,
+.navbar-custom .buttons > .wallet-address {
+  margin: 0; /* Rely on the gap property of the .buttons container */
+  flex-shrink: 1; /* Allow all these items to shrink */
+}
+
+/* Specific styling for the cart button to prevent text wrapping */
+.navbar-custom .buttons .cart-nav-button {
+  white-space: nowrap; /* Prevent "Cart (0)" from wrapping */
+  flex-shrink: 0; /* Prevent this specific button from shrinking too much */
+}
+
+.navbar-custom .buttons .cart-nav-button:hover .cart-info {
+  color: #FFFFFF; /* Ensure cart text becomes white on button hover */
+}
+
+/* Custom Navbar Toggler for light theme */
+.navbar-toggler-icon-custom {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23D97706' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* Amber toggler */
+}
+
+.navbar-custom .navbar-toggler {
+  border-color: rgba(217, 119, 6, 0.5);
+}
+.navbar-custom .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(217, 119, 6, 0.25);
+}
+
+.page-container {
+  padding-top: 90px;
+  min-height: 100vh;
+  background-color: #fdfbf8; /* Ensure page container matches body bg */
+}
+
+/* NFT Card Styling - White to Tortoise Theme */
+.nft-card {
+  background-color: #ffffff; /* White card background */
+  border: 1px solid #e5d8cf; /* Light warm brown border */
+  border-radius: 12px;
+  padding: 0;
+  color: #4a3b31; /* Deep brown text */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(74, 59, 49, 0.07); /* Soft brown-tinted shadow */
+}
+.nft-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(74, 59, 49, 0.1);
+}
+.nft-card img {
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+  margin-bottom: 0;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background-color: #fdfbf8; /* Light cream bg for image area */
+}
+
+.nft-card-content {
+  padding: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.nft-card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #4a3b31; /* Deep brown */
+  margin-bottom: 0.4rem;
+}
+.nft-card-collection {
+  font-size: 0.85rem;
+  color: #a0522d; /* Sienna */
+  margin-bottom: 0.6rem;
+}
+.nft-card-price {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #d97706; /* Warm Amber */
+  margin-bottom: 1rem;
+}
+.nft-card-artist {
+  font-size: 0.8rem;
+  color: #a0522d; /* Sienna */
+  margin-bottom: 0.8rem;
+}
+.nft-card-description {
+  font-size: 0.9rem;
+  color: #5c4033; /* Medium-dark brown */
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.nft-card-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.nft-card .btn-view-details {
+  background-color: transparent;
+  color: #d97706; /* Warm Amber */
+  border: 2px solid #d97706;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  flex-grow: 1;
+  transition: all 0.2s ease;
+}
+.nft-card .btn-view-details:hover {
+  background-color: #d97706;
+  color: #ffffff;
+}
+
+.nft-card .btn-action-primary {
+  background: #d97706; /* Solid Warm Amber */
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+  text-align: center;
+  flex-grow: 1;
+  transition: all 0.2s ease;
+}
+
+.nft-card .btn-action-primary:hover {
+  background: #b85b00; /* Darker Amber */
+  transform: translateY(-1px);
+}
+
+.page-container-nft-market {
+  background-color: #fdfbf8; /* Match body light background */
+  border-radius: 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Unified Page Title Style - White to Tortoise Theme */
+.page-main-title {
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #4a3b31; /* Deep brown */
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+  letter-spacing: -0.25px;
+  text-shadow: none;
+}
+
+.page-main-title::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  background-color: #d97706; /* Warm Amber */
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+.page-title-nft,
+.cart-page-title,
+.checkout-page-title,
+.static-page-title {
+  color: #4a3b31; /* Deep brown */
+  text-shadow: none;
+}
+
+/* Single NFT Page Specific Styles - White to Tortoise Theme */
+.single-nft-page {
+  color: #4a3b31;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  background-color: #ffffff; /* White background for content area */
+  border-radius: 8px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(74, 59, 49, 0.06); /* Soft brown-tinted shadow */
+}
+
+.nft-image-container img {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border: 1px solid #e5d8cf; /* Light warm brown border */
+  border-radius: 8px;
+  background-color: #fdfbf8; /* Light cream bg for image container */
+}
+
+.text-muted-nft {
+  color: #a0522d !important; /* Sienna */
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+.nft-title-main {
+  color: #4a3b31; /* Deep brown */
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+  font-size: 2.2rem;
+  line-height: 1.3;
+}
+
+.nft-artist {
+  font-size: 1.1rem;
+  color: #5c4033; /* Medium-dark brown */
+}
+
+.text-highlight-nft {
+  color: #d97706; /* Warm Amber */
+  font-weight: 600;
+}
+
+.nft-description-full {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #5c4033; /* Medium-dark brown */
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.nft-price-main {
+  color: #d97706; /* Warm Amber */
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.action-buttons-nft .btn {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  border-radius: 25px;
+}
+.action-buttons-nft .btn-custom-primary {
+  background: #d97706; /* Warm Amber */
+  color: #ffffff;
+  border: none;
+}
+.action-buttons-nft .btn-custom-primary:hover {
+  background: #b85b00; /* Darker Amber */
+}
+.action-buttons-nft .btn-custom-outline {
+  color: #d97706;
+  border-color: #d97706;
+  background-color: transparent;
+}
+.action-buttons-nft .btn-custom-outline:hover {
+  background-color: #d97706;
+  color: #ffffff;
+}
+
+.nft-not-found-container {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background-color: #ffffff; /* White background */
+  border-radius: 8px;
+  margin: 2rem auto;
+}
+
+.nft-not-found-container h2 {
+  color: #c82333; /* Danger red */
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.nft-not-found-container p {
+  color: #5c4033; /* Medium-dark brown */
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+/* Hero Section - White to Tortoise Theme */
+.hero-section {
+  background: linear-gradient(to bottom, #fdfbf8, #f5efe6); /* Subtle warm gradient */
+  color: #4a3b31; /* Deep brown text */
+  padding: 8rem 2rem;
+  text-align: center;
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 3px solid #d97706; /* Warm Amber accent */
+  position: relative;
+}
+
+.hero-section .hero-tagline {
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+  text-shadow: 0 1px 2px rgba(74, 59, 49, 0.1); /* Very subtle brown shadow */
+  letter-spacing: -0.5px;
+}
+
+.hero-section .hero-subtitle {
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+  color: #5c4033; /* Medium-dark brown */
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.hero-section .btn-hero-cta {
+  background: #d97706; /* Warm Amber */
+  color: #ffffff;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.25px;
+  text-transform: uppercase;
+  border-radius: 25px;
+  box-shadow: 0 5px 15px rgba(217, 119, 6, 0.2);
+  transition: all 0.3s ease;
+}
+.hero-section .btn-hero-cta:hover {
+  background: #b85b00; /* Darker Amber */
+  box-shadow: 0 7px 20px rgba(217, 119, 6, 0.3);
+  transform: translateY(-2px) scale(1.01);
+}
+
+/* Featured NFTs Section - White to Tortoise Theme */
+.featured-nfts-section {
+  background-color: #faf6f0; /* Slightly different warm off-white for separation */
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid #e5d8cf; /* Light warm brown separator */
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #4a3b31; /* Deep brown */
+  margin-bottom: 0.75rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+  text-align: center;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #d97706; /* Warm Amber */
+  margin: 0.75rem auto 2.5rem;
+  border-radius: 2px;
+}
+
+.featured-nfts-section .nft-card .btn-view-details.btn-sm {
+  padding: 0.35rem 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Cart & Checkout Page Specific Styles - White to Tortoise Theme */
+.cart-page-container,
+.checkout-page-container {
+  padding: 2rem 0;
+  color: #4a3b31; /* Deep brown */
+  background-color: #fdfbf8; /* Match body bg */
+}
+
+.cart-item-card,
+.cart-summary-card,
+.checkout-form-card,
+.checkout-summary-card {
+  background-color: #ffffff; /* White cards */
+  border: 1px solid #e5d8cf; /* Light warm brown border */
+  border-radius: 10px;
+  padding: 0;
+  margin-bottom: 1.75rem;
+  box-shadow: 0 5px 15px rgba(74, 59, 49, 0.06); /* Soft brown-tinted shadow */
+}
+
+.cart-item-card .card-header,
+.cart-summary-card .card-header,
+.checkout-form-card .card-header,
+.checkout-summary-card .card-header {
+  background-color: #fdfbf8; /* Light cream header */
+  border-bottom: 1px solid #e5d8cf; /* Light warm brown border */
+  padding: 0.9rem 1.25rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.cart-item-card .card-header h5,
+.cart-summary-card .card-header h5,
+.checkout-form-card .card-header h4,
+.checkout-summary-card .card-header h5 {
+  color: #4a3b31; /* Deep brown header text */
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.cart-item-card .card-body,
+.checkout-form-card .card-body,
+.checkout-summary-card .card-body {
+  padding: 1.25rem;
+}
+
+.cart-item-row {
+  padding: 1.25rem;
+  border-bottom: 1px solid #e5d8cf; /* Light warm brown separator */
+}
+.cart-item-row:last-child {
+  border-bottom: none;
+}
+
+.cart-item-image {
+  width: 85px;
+  height: 85px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #d97706; /* Warm Amber outline */
+}
+
+.cart-item-details h5 {
+  color: #4a3b31; /* Deep brown */
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  font-size: 1.05rem;
+}
+.cart-item-details p {
+  margin-bottom: 0.15rem;
+  font-size: 0.85rem;
+  color: #a0522d; /* Sienna */
+}
+.cart-item-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #d97706; /* Warm Amber */
+  text-align: right;
+}
+
+.btn-remove-item {
+  color: #c82333; /* Danger red */
+  background-color: transparent;
+  border: 1px solid #c82333;
+  padding: 0.35rem 0.7rem;
+  border-radius: 18px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+.btn-remove-item:hover {
+  background-color: #c82333;
+  color: #ffffff;
+}
+
+.cart-summary-card .list-group-item {
+  background-color: transparent;
+  color: #4a3b31; /* Deep brown */
+  border-color: #e5d8cf; /* Light warm brown */
+  font-weight: 400;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 0.95rem;
+}
+.cart-summary-card .list-group-item strong {
+  color: #4a3b31; /* Deep brown */
+  font-weight: 600;
+}
+.cart-summary-card .total-eth {
+  color: #d97706; /* Warm Amber */
+  font-weight: 700;
+}
+
+.empty-cart-container {
+  background-color: #ffffff; /* White background */
+  padding: 3rem;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid #e5d8cf; /* Light warm brown border */
+  box-shadow: 0 5px 15px rgba(74, 59, 49, 0.06); /* Soft brown-tinted shadow */
+}
+.empty-cart-container h4 {
+  color: #4a3b31; /* Deep brown */
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+.empty-cart-container p {
+  color: #5c4033; /* Medium-dark brown */
+  font-size: 1rem;
+}
+
+/* General Button Styles */
+.btn-primary-global {
+  background: #d97706; /* Warm Amber */
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.15);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.btn-primary-global:hover {
+  background: #b85b00; /* Darker Amber */
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);
+  transform: translateY(-1px);
+}
+.btn-primary-global.btn-lg {
+  padding: 0.9rem 2rem;
+  font-size: 1.1rem;
+}
+
+.btn-outline-global {
+  color: #d97706; /* Warm Amber */
+  border: 2px solid #d97706;
+  background-color: transparent;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.btn-outline-global:hover {
+  background-color: #d97706;
+  color: #ffffff;
+}
+.btn-outline-global.btn-lg {
+  padding: 0.9rem 2rem;
+  font-size: 1.1rem;
+}
+
+/* Form Styling - White to Tortoise Theme */
+.form-label-global {
+  color: #5c4033; /* Medium-dark brown */
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.form-control-global,
+.form-select-global {
+  background-color: #ffffff; /* White input background */
+  color: #4a3b31; /* Deep brown text */
+  border: 1px solid #d4c5b9; /* Medium warm brown border */
+  border-radius: 6px;
+  padding: 0.65rem 1rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  font-size: 0.95rem;
+}
+.form-control-global:focus,
+.form-select-global:focus {
+  background-color: #ffffff;
+  border-color: #d97706; /* Warm Amber focus border */
+  box-shadow: 0 0 0 0.2rem rgba(217, 119, 6, 0.25); /* Amber focus shadow */
+  color: #4a3b31;
+}
+.form-control-global::placeholder {
+  color: #a0522d; /* Sienna placeholder */
+}
+.form-control-global:disabled,
+.form-select-global:disabled {
+  background-color: #fdfbf8; /* Light cream for disabled */
+  opacity: 0.7;
+}
+
+/* Applying global form styles to existing checkout form classes */
+.checkout-form-card .form-label {
+  color: #5c4033;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.checkout-form-card .form-control,
+.checkout-form-card .form-select {
+  background-color: #ffffff;
+  color: #4a3b31;
+  border: 1px solid #d4c5b9;
+  border-radius: 6px;
+  padding: 0.65rem 1rem;
+  font-size: 0.95rem;
+}
+.checkout-form-card .form-control:focus,
+.checkout-form-card .form-select:focus {
+  background-color: #ffffff;
+  border-color: #d97706;
+  box-shadow: 0 0 0 0.2rem rgba(217, 119, 6, 0.25);
+  color: #4a3b31;
+}
+.checkout-form-card .form-control::placeholder {
+  color: #a0522d;
+}
+.checkout-form-card .form-control:disabled,
+.checkout-form-card .form-select:disabled {
+  background-color: #fdfbf8;
+  opacity: 0.7;
+}
+
+.checkout-form-card .form-check-input {
+  background-color: #ffffff;
+  border-color: #d4c5b9;
+}
+.checkout-form-card .form-check-input:checked {
+  background-color: #d97706; /* Warm Amber */
+  border-color: #d97706;
+}
+.checkout-form-card .form-check-label {
+  color: #5c4033; /* Medium-dark brown */
+  font-size: 0.9rem;
+}
+
+/* Payment Status Message - White to Tortoise Theme */
+.payment-status-message {
+  margin-top: 1.5rem;
+  padding: 0.9rem;
+  border-radius: 6px;
+  font-weight: 500;
+  text-align: center;
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+  word-break: break-all; /* Allow long strings like hashes to wrap */
+  overflow-wrap: break-word; /* Alternative for word wrapping */
+}
+.payment-status-message.info {
+  background-color: #fff3e0; /* Light Amber/Orange */
+  color: #8d530c; /* Dark Amber text */
+  border-color: #ffe0b2;
+}
+.payment-status-message.success {
+  background-color: #e8f5e9; /* Light Green (can adjust to be warmer if needed) */
+  color: #2e7d32; /* Dark Green text */
+  border-color: #c8e6c9;
+}
+.payment-status-message.error {
+  background-color: #ffebee; /* Light Red */
+  color: #b71c1c; /* Dark Red text */
+  border-color: #ffcdd2;
+}
+
+.checkout-summary-card .nft-item-summary .nft-title {
+  color: #4a3b31; /* Deep brown */
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.checkout-summary-card .nft-item-summary .text-highlight-nft {
+  /* Price */
+  font-size: 0.9rem;
+  color: #d97706; /* Warm Amber */
+}
+
+.btn-pay-crypto {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* Footer Styles - White to Tortoise Theme */
+.footer-custom {
+  background-color: #f5efe6; /* Slightly darker cream/beige than body */
+  color: #5c4033; /* Medium-dark brown text */
+  padding: 2.5rem 0;
+  border-top: 1px solid #e5d8cf; /* Light warm brown border */
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-brand {
+  color: #4a3b31; /* Deep brown */
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-block;
+  margin-bottom: 0.4rem;
+}
+.footer-brand:hover {
+  color: #d97706; /* Warm Amber */
+}
+
+.footer-social-links {
+  margin-bottom: 1.25rem;
+}
+
+.footer-social-links .social-icon {
+  color: #5c4033; /* Medium-dark brown */
+  font-size: 1.4rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+  margin-left: 0.6rem;
+  margin-right: 0.6rem;
+}
+.footer-social-links .social-icon:hover {
+  color: #d97706; /* Warm Amber */
+  transform: scale(1.1);
+}
+
+.footer-copyright {
+  font-size: 0.85rem;
+  color: #a0522d; /* Sienna */
+}
+
+/* Static Page Container - White to Tortoise Theme */
+.static-page-container {
+  background-color: #ffffff; /* White background for static content areas */
+  color: #4a3b31; /* Deep brown */
+  padding: 3rem 1rem;
+  min-height: calc(100vh - 180px);
+  margin: 2rem auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(74, 59, 49, 0.05); /* Soft brown-tinted shadow */
+}
+
+.static-page-container .lead-text {
+  font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+  color: #5c4033; /* Medium-dark brown */
+  line-height: 1.7;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5rem;
+}
+
+.static-page-container p {
+  font-size: 1rem;
+  color: #4a3b31; /* Deep brown */
+  line-height: 1.75;
+  margin-bottom: 1.15rem;
+}
+
+.static-page-container h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2rem);
+  color: #4a3b31; /* Deep brown */
+  font-weight: 600;
+  margin-top: 2.25rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid #e5d8cf; /* Light warm brown border */
+  padding-bottom: 0.4rem;
+}
+
+.static-page-container h3 {
+  font-size: clamp(1.3rem, 2.8vw, 1.6rem);
+  color: #4a3b31; /* Deep brown */
+  font-weight: 600;
+  margin-top: 1.8rem;
+  margin-bottom: 0.9rem;
+}
+
+.static-page-container h4 {
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  color: #d97706; /* Warm Amber for h4 */
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.static-page-container ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.static-page-container ul li {
+  padding-left: 1.6em;
+  text-indent: -1.6em;
+  margin-bottom: 0.6rem;
+  color: #4a3b31; /* Deep brown */
+}
+
+.static-page-container ul li::before {
+  content: "\f058";
+  font-family: "FontAwesome";
+  margin-right: 0.8em;
+  color: #d97706; /* Warm Amber */
+}
+
+.static-page-container .text-highlight-nft {
+  color: #d97706; /* Warm Amber */
+}
+
+.static-page-container .fst-italic {
+  color: #a0522d; /* Sienna */
+}
+
+.static-page-container hr {
+  border-color: #e5d8cf; /* Light warm brown */
+  opacity: 0.75;
+  margin-top: 1.8rem;
+  margin-bottom: 1.8rem;
+}
+
+/* Chatbot styles update for White to Tortoise theme */
+.chatbot-toggler {
+  background-color: #d97706; /* Warm Amber */
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+}
+.chatbot-toggler:hover {
+  background-color: #b85b00; /* Darker Amber */
+  box-shadow: 0 6px 18px rgba(217, 119, 6, 0.4);
+}
+
+.chatbot-window {
+  background-color: #ffffff; /* White window */
+  border: 1px solid #e5d8cf; /* Light warm brown border */
+  box-shadow: 0 8px 25px rgba(74, 59, 49, 0.1); /* Soft brown-tinted shadow */
+}
+
+.chatbot-header {
+  background-color: #fdfbf8; /* Light cream header */
+  color: #4a3b31; /* Deep brown text */
+  border-bottom: 1px solid #e5d8cf; /* Light warm brown border */
+}
+.chatbot-close-btn {
+  color: #a0522d; /* Sienna */
+}
+.chatbot-close-btn:hover {
+  color: #4a3b31; /* Deep brown */
+}
+
+.chatbot-messages {
+  background-color: #ffffff; /* White messages area */
+}
+
+.bot-message {
+  background-color: #fdfbf8; /* Light cream for bot messages */
+  color: #4a3b31; /* Deep brown text */
+}
+
+.user-message {
+  background-color: #ffe0b2; /* Light Amber for user messages */
+  color: #4a3b31; /* Deep brown text */
+}
+
+.chatbot-input-form {
+  background-color: #fdfbf8; /* Light cream input area */
+  border-top: 1px solid #e5d8cf; /* Light warm brown border */
+}
+
+.chatbot-input-form input[type="text"] {
+  background-color: #ffffff; /* White input field */
+  color: #4a3b31; /* Deep brown text */
+  border: 1px solid #d4c5b9; /* Medium warm brown border */
+}
+
+.chatbot-input-form input[type="text"]::placeholder {
+  color: #a0522d; /* Sienna placeholder */
+}
+
+.chatbot-input-form input[type="text"]:focus {
+  border-color: #d97706; /* Warm Amber focus border */
+  box-shadow: 0 0 0 0.2rem rgba(217, 119, 6, 0.25); /* Amber focus shadow */
+}
+
+.chatbot-input-form button[type="submit"] {
+  background-color: #d97706; /* Warm Amber send button */
+}
+
+.chatbot-input-form button[type="submit"]:hover {
+  background-color: #b85b00; /* Darker Amber */
+}
+
+/* Ensure all other styles from previous dark theme are overridden or removed if not needed */
+/* For example, any remaining #0F0F1A, #1A1A2E, #232946, #00BFFF, #AEB6BF etc. should be checked */
+/* and replaced according to the new 'white to tortoise' theme. */
+/* The above changes cover many key areas, but a full audit would be beneficial */
+/* for 100% theme consistency. */
+
+/* Styles for when the navbar is collapsed (mobile view) */
+@media (max-width: 991.98px) { /* Bootstrap's lg breakpoint */
+  .navbar-collapse .buttons {
+    margin-top: 1rem; /* Add some space above the buttons block */
+    align-items: stretch; /* Make items stretch to fill width */
+  }
+
+  .navbar-collapse .buttons > .btn-custom-outline,
+  .navbar-collapse .buttons > .btn-custom-primary,
+  .navbar-collapse .buttons > .btn-custom-danger,
+  .navbar-collapse .buttons > .wallet-address {
+    width: 100%; /* Make buttons/wallet address take full width */
+    margin-bottom: 0.5rem; /* Add some space between stacked items */
+    text-align: center; /* Center text within these full-width items */
+  }
+
+  .navbar-collapse .buttons > .wallet-address {
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+  }
+
+  .navbar-collapse .nav-item .nav-link {
+    padding-left: 0.5rem; /* Adjust padding for main nav links in collapsed menu */
+    text-align: left;
+  }
+  .navbar-custom .navbar-nav.text-center { /* From Navbar.jsx ul element */
+    text-align: left !important; /* Override text-center for collapsed view */
+  }
+}
+
+/* Hero Section Mobile Adjustments */
+.hero-section {
+  padding: 4rem 1rem; /* Reduced padding for mobile */
+  min-height: 50vh;
+}
+.hero-section .hero-tagline {
+  font-size: clamp(1.8rem, 7vw, 2.5rem); /* Smaller clamp for mobile */
+}
+.hero-section .hero-subtitle {
+  font-size: clamp(0.9rem, 4vw, 1.1rem); /* Smaller clamp for mobile */
+  margin-bottom: 1.5rem;
+}
+.hero-section .btn-hero-cta {
+  padding: 0.8rem 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* Page Main Title Mobile Adjustments */
+.page-main-title {
+  font-size: clamp(1.8rem, 6vw, 2.2rem); /* Smaller clamp */
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+.page-main-title::after {
+  width: 50px;
+  height: 2px;
+  margin-top: 0.5rem;
+}
+
+/* Section Title (like Featured Collections) Mobile Adjustments */
+.section-title {
+  font-size: 1.8rem;
+  padding-bottom: 0.5rem;
+}
+.section-title::after {
+  width: 50px;
+  height: 2px;
+  margin: 0.5rem auto 1.5rem;
+}
+
+/* NFT Card Mobile Adjustments */
+.nft-card-content {
+  padding: 1rem;
+}
+.nft-card-title {
+  font-size: 1rem;
+}
+.nft-card-collection,
+.nft-card-artist {
+  font-size: 0.75rem;
+}
+.nft-card-description {
+  font-size: 0.8rem;
+}
+.nft-card-price {
+  font-size: 0.95rem;
+}
+.nft-card .btn-view-details,
+.nft-card .btn-action-primary {
+  font-size: 0.8rem;
+  padding: 0.4rem 0.8rem;
+}
+
+/* General page container adjustments */
+.page-container, .static-page-container {
+  padding-top: 1rem; /* Reduce top padding */
+}
+.static-page-container {
+  padding: 1.5rem 0.75rem; /* Reduce padding */
+}
+
+/* Cart & Checkout page adjustments for mobile */
+.cart-page-container, .checkout-page-container {
+  padding: 1rem 0;
+}
+.checkout-form-card .card-body, 
+.checkout-summary-card .card-body,
+.cart-item-card .card-body {
+  padding: 1rem;
+}
+.cart-item-image {
+  width: 60px;
+  height: 60px;
+}
+.cart-item-details h5 {
+  font-size: 0.9rem;
+}
+.cart-item-price {
+  font-size: 1rem;
+}
+
+/* You might want even more granular adjustments for very small screens */
+@media (max-width: 400px) {
+  .hero-section .hero-tagline {
+    font-size: 1.6rem;
+  }
+  .hero-section .hero-subtitle {
+    font-size: 0.85rem;
+  }
+  .navbar-custom .wallet-address {
+    max-width: 110px; /* Even smaller wallet address if needed */
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
