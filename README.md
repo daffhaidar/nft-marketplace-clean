@@ -16,7 +16,7 @@ This is a full-featured e-commerce application with chatbot and wallet functiona
 Clone the project
 
 ```bash
-  git clone https://github.com/daffhaidar/danna-nft.git
+  git clone https://github.com/daffhaidar/nft-marketplace-clean.git
 ```
 
 Go to the project directory
@@ -81,9 +81,6 @@ The digital wallet feature enables users to:
 - Ethers.js for wallet functionality
 - Redux for state management
 
-<<<<<<< HEAD
-> Inspired by [ssahibsingh/React_E-Commerce](https://github.com/ssahibsingh/React_E-Commerce)
 
-=======
- Inspired by [ssahibsingh/React_E-Commerce](https://github.com/ssahibsingh/React_E-Commerce)
->>>>>>> 7061dddee904c98dfd79b810bae8380fd58c1166
+
+> Inspired by [ssahibsingh/React_E-Commerce](https://github.com/ssahibsingh/React_E-Commerce)
