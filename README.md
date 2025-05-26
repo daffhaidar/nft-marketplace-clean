@@ -16,13 +16,13 @@ This is a full-featured e-commerce application with chatbot and wallet functiona
 Clone the project
 
 ```bash
-  git clone https://gitlab.com/topmanager916-group/e-commerce
+  git clone https://github.com/daffhaidar/danna-nft.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd e-commerce
+  cd nft-marketplace-final
 ```
 
 Set up environment variables:
@@ -81,4 +81,5 @@ The digital wallet feature enables users to:
 - Ethers.js for wallet functionality
 - Redux for state management
 
+> Inspired by [ssahibsingh/React_E-Commerce](https://github.com/ssahibsingh/React_E-Commerce)
 
