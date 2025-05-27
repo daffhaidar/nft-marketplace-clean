@@ -7,7 +7,7 @@ const AboutPage = () => {
     <>
       <Navbar />
       <div className="container my-md-5 my-3 py-md-5 py-3 static-page-container">
-        <h1 className="static-page-title">About Danna's Site:</h1>
+        <h1 className="static-page-title text-center">About Danna's Site:</h1>
         {/* <hr /> Optional: if hr is desired, it will be styled by global CSS */}
 
         <div className="row justify-content-center mt-4">

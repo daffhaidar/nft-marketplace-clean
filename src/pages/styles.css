@@ -1170,3 +1170,14 @@ body {
     padding: 0.4rem 0.6rem;
   }
 }
+
+/* Static Page General Title (like About, Contact headers) */
+.static-page-title {
+  font-size: clamp(2rem, 5vw, 2.8rem); /* Responsive font size */
+  color: #4a3b31; /* Deep brown */
+  font-weight: 700;
+  margin-bottom: 1rem; /* Add some space below the title */
+  padding-bottom: 0.5rem; /* Space for the border */
+  border-bottom: 2px solid #d97706; /* Warm Amber border, similar to h2 */
+  display: inline-block; /* To make the border only as wide as the text */
+}

@@ -1,5 +1,6 @@
 /* Chatbot Toggler Button */
 .chatbot-toggler {
+  box-sizing: border-box; /* Add box-sizing */
   position: fixed;
   bottom: 30px;
   right: 30px;
@@ -27,6 +28,7 @@
 
 /* Chatbot Window */
 .chatbot-window {
+  box-sizing: border-box; /* Add box-sizing */
   position: fixed;
   bottom: 100px; /* Position above the toggler */
   right: 30px;
@@ -45,6 +47,7 @@
 
 /* Chatbot Header */
 .chatbot-header {
+  box-sizing: border-box; /* Add box-sizing */
   background-color: #232946; /* Slightly lighter dark shade */
   color: #EAEAEA;
   padding: 0.75rem 1rem;
@@ -75,6 +78,7 @@
 
 /* Chatbot Messages Area */
 .chatbot-messages {
+  box-sizing: border-box; /* Add box-sizing */
   flex-grow: 1;
   padding: 1rem;
   overflow-y: auto;
@@ -86,6 +90,7 @@
 
 /* Individual Chat Message */
 .chat-message {
+  box-sizing: border-box; /* Add box-sizing */
   padding: 0.6rem 0.9rem;
   border-radius: 10px;
   max-width: 80%;
@@ -114,13 +119,17 @@
 
 /* Chatbot Input Form */
 .chatbot-input-form {
+  box-sizing: border-box; /* Add box-sizing */
   display: flex;
+  align-items: center; /* Align items for better spacing with gap */
+  gap: 0.5rem; /* Add gap between input and button */
   padding: 0.75rem;
   border-top: 1px solid #303857;
   background-color: #232946;
 }
 
 .chatbot-input-form input[type="text"] {
+  box-sizing: border-box; /* Add box-sizing */
   flex-grow: 1;
   padding: 0.6rem 0.8rem;
   border: 1px solid #303857;
@@ -142,6 +151,7 @@
 }
 
 .chatbot-input-form button[type="submit"] {
+  box-sizing: border-box; /* Add box-sizing */
   background-color: #00BFFF;
   color: #FFFFFF;
   border: none;
@@ -162,4 +172,64 @@
 
 .chatbot-input-form button[type="submit"] i {
     margin-left: 1px; /* slight adjustment for centering paper plane */
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .chatbot-window {
+    width: 90%; /* Take up more width on small screens */
+    min-width: 280px; /* Ensure it doesn't get too narrow */
+    max-width: 350px; /* Adjusted max-width */
+    right: 5%; /* Center it a bit */
+    bottom: 80px; /* Adjust bottom position */
+    max-height: 60vh; /* Adjust max height */
+  }
+
+  .chatbot-toggler {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .chatbot-header h3 {
+    font-size: 1rem;
+  }
+
+  .chat-message {
+    max-width: 90%;
+    font-size: 0.9rem;
+  }
+   .chat-message p {
+    font-size: 0.9rem;
+  }
+
+  .chatbot-input-form {
+    padding: 0.5rem; /* Reduce padding on small screens */
+  }
+
+  .chatbot-input-form input[type="text"] {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.7rem;
+    margin-right: 0; /* Remove margin as gap is used now */
+    min-width: 0; /* Allow input to shrink properly */
+  }
+
+  .chatbot-input-form button[type="submit"] {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+    flex-shrink: 0; /* Prevent button from shrinking too much */
+  }
+}
+
+@media (max-width: 380px) {
+    .chatbot-window {
+        /* For very small screens, make it almost full width if needed, but respect max-width */
+        width: 95%; 
+        min-width: 260px; /* Further adjust min-width */
+        max-width: 300px; 
+        right: 2.5%;
+    }
 } 
